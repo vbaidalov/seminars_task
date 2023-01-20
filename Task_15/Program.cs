@@ -11,7 +11,7 @@ if (a >= 8 || a <= 0)
 }
 else
 {
-if (a >= 6 && a <= 8)
+if (a >= 6 && a <= 7)
 Console.WriteLine(a +" -> Выходной");
 else
 Console.WriteLine(a +" -> Рабочий день");
