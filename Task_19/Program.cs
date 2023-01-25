@@ -3,7 +3,7 @@
 // 12821 -> да
 // 23432 -> да
 
-/*
+
 // Нахождение через int
 Console.Write("Введите пятизначное число ");
 int num = int.Parse(Console.ReadLine()??" ");
@@ -21,33 +21,23 @@ if (num >= 10000 && num <= 99999)
 // Console.WriteLine(num2);
 // Console.WriteLine(twonum1);
 // Console.WriteLine(twonum2);
-    if (num1 == num2 || twonum1 == twonum2) Console.WriteLine($"{num} -> да");
+    if (num1 == num2 && twonum1 == twonum2) Console.WriteLine($"{num} -> да");
     else Console.WriteLine($"{num} -> нет");
 }
 else Console.WriteLine("Ну чего ты, не можешь ввести пять цифр подряд?");
-*/
-
-/*
-// ПРИМЕР обращение к элементу строки
-int num = new Random().Next(100, 1000);
-Console.WriteLine(num);
-string num1 = Convert.ToString(num);
-Console.WriteLine("{0}{1}",num1[0],num1[2]);
-
-string Myarray(int count, string text)
-*/
 
 
 /*
-Console.WriteLine("Введите координаты точки один: ");
-string[] array1 = Console.ReadLine()
-*/
+// Нахождение через строку. нахимичил я тут жуть, но это работает
+string s;
 
+Console.Write("Введите пятизначное число ");
+s = Console.ReadLine()??" ";
 
-Console.Write("Введите число: ");
-string[] array = Console.ReadLine()
-
-if (array[0] == array[1])
+if(s.Length == 5)
 {
-Console.WriteLine("работет")
+    if(s[0] == s[s.Length-1] && s[1] == s[s.Length-2]) Console.WriteLine($"{s} -> да");
+    else Console.WriteLine($"{s} -> нет");
 }
+else Console.WriteLine("Ну чего ты, не можешь ввести пять цифр подряд?");
+*/
