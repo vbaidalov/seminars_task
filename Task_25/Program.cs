@@ -2,19 +2,18 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-Console.WriteLine("Введите число А: ");
+Console.WriteLine("Введите первое число A:");
 int a = int.Parse(Console.ReadLine()??"");
-Console.WriteLine("Введите число В: ");
+Console.WriteLine("Введите второе число B:");
 int b = int.Parse(Console.ReadLine()??"");
 
-
-int Step(int num)
+int Exp(int a, int b)
 {
-    int count = 0;
-    for (int i = 0; i < b; i++)
-    {
-    count = i * i;
-    }
-    return count;
+int result = 1;
+for (int i = 1; i <= b; i++)
+{
+result = result * a;
 }
-Console.WriteLine($"Сумма чисел от 1 до {A} равна {Step(num)}");
+return result;
+}
+Console.WriteLine($"{a}, {b} -> {Exp(a,b)}");
