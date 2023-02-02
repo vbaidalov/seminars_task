@@ -1,20 +1,33 @@
-﻿// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-// 3, 5 -> 243 (3⁵)
-// 2, 4 -> 16
-
-Console.WriteLine("Введите число А: ");
-int a = int.Parse(Console.ReadLine()??"");
-Console.WriteLine("Введите число В: ");
-int b = int.Parse(Console.ReadLine()??"");
+﻿// Задача 38: Задайте массив целых чисел. Найдите разницу между максимальным и минимальным элементов массива. 
+// [3 7 22 2 78] -> 76 
+int[] array = new int[5]; 
+MyRandomArray(array); 
+Console.Write(" -> "); 
+Console.WriteLine(FindingMinMax(array));
 
 
-int Step(int num)
-{
-    int count = 0;
-    for (int i = 0; i < b; i++)
-    {
-    count = i * i;
-    }
-    return count;
+void MyRandomArray(int[] array) // функция создания рандомного массива 
+{ 
+Console.Write("["); 
+for (int i = 0; i < array.Length; i++) 
+{ 
+     array[i] = new Random().Next(1, 100); 
+     Console.Write(array[i] + ", "); 
+} 
+Console.Write("\b\b"); 
+Console.Write("]"); 
 }
-Console.WriteLine($"Сумма чисел от 1 до {A} равна {Step(num)}");
+
+
+int FindingMinMax(int[] array) 
+{ 
+int max = array[0]; 
+int min = array[0]; 
+for (int i = 0; i < array.Length; i++) 
+{ 
+    if (array[i] > max) max = array[i];
+    if (array[i] < min) min = array[i];
+} 
+int result = max - min; 
+return result; 
+}
