@@ -1,33 +1,19 @@
-﻿// Задача 38: Задайте массив целых чисел. Найдите разницу между максимальным и минимальным элементов массива. 
-// [3 7 22 2 78] -> 76 
-int[] array = new int[5]; 
-MyRandomArray(array); 
-Console.Write(" -> "); 
-Console.WriteLine(FindingMinMax(array));
+﻿// Задача 43: Напишите программу, которая найдёт точку  пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x  + b2;
+// значения b1, k1, b2 и k2 задаются пользователем. 
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+// y = k1 * x + b1, 
+// y = k2 * x  + b2;
 
+Console.Write("Введите число b1: ");
+double b1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число k1: ");
+double k1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число b2: ");
+double b2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число k2: ");
+double k2 = Convert.ToInt32(Console.ReadLine());
 
-void MyRandomArray(int[] array) // функция создания рандомного массива 
-{ 
-Console.Write("["); 
-for (int i = 0; i < array.Length; i++) 
-{ 
-     array[i] = new Random().Next(1, 100); 
-     Console.Write(array[i] + ", "); 
-} 
-Console.Write("\b\b"); 
-Console.Write("]"); 
-}
+double x = (b2 - b1) / (k1 - k2);
+double y = k1 * x + b1;
 
-
-int FindingMinMax(int[] array) 
-{ 
-int max = array[0]; 
-int min = array[0]; 
-for (int i = 0; i < array.Length; i++) 
-{ 
-    if (array[i] > max) max = array[i];
-    if (array[i] < min) min = array[i];
-} 
-int result = max - min; 
-return result; 
-}
+Console.Write($"b1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} -> ({x}; {y})");
